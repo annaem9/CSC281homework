@@ -1,7 +1,7 @@
 /**
  * Homework 1 for CSC-281.001 Spring 2017
  * 
- * Your codename: 
+ * Your codename: Chalirena
  * 
  * This assignment consists of 7 problems. Problem 1 asks you to modify existing
  * code for three subproblems.The remaining six problems each require you to 
@@ -56,13 +56,12 @@ public class Homework1 {
    System.out.println(String.valueOf(hw1.min3(0.5, 0.1, 0.5)));
     
     System.out.println("===Problem 6===");
-    // Uncomment to print the results of calling your fibonacci method with the following input:
-    //System.out.println(hw1.fibonacci(0));
-    //System.out.println(hw1.fibonacci(1));
-    //System.out.println(hw1.fibonacci(2));
-    //System.out.println(hw1.fibonacci(3));
-    //System.out.println(hw1.fibonacci(10));
-    //System.out.println(hw1.fibonacci(25));
+    System.out.println(hw1.fibonacci(0));
+    System.out.println(hw1.fibonacci(1));
+    System.out.println(hw1.fibonacci(2));
+    System.out.println(hw1.fibonacci(3));
+    System.out.println(hw1.fibonacci(10));
+    System.out.println(hw1.fibonacci(25));
     
     
     System.out.println("===Problem 7===");
@@ -170,6 +169,25 @@ if (num3>getComparing) {
   } else {
       return (getComparing);
   }
+}
+
+ /*
+   * PROBLEM 6
+   * 
+   * @param n--n is the number of iterations
+   * 
+   *
+   * This method assumes the seed values of F(0) = 1 and F(1) = 1, and utilizes recursion, 
+   *meaning the method calls itself.
+   */
+ 
+public int fibonacci (int n) {
+  if (n==0) 
+   {return 0;
+} else if (n==1) {
+    return 1;
+} else {
+    return fibonacci(n-1) + fibonacci(n-2); }
 }
 
 }

@@ -1,0 +1,69 @@
+  /*
+   * PROBLEM 6
+   * 
+   * method "fibonacci" takes a single int as its only parameter. 
+   * It should return the fibonacci number at that int
+   * 
+   *
+   * This assumes the seed values of F(0) = 1 and F(1) = 1, and utilizes recursion, 
+   *meaning the method calls itself.
+   */
+
+public void fibonacci (int n) {
+  int seed1 =0;
+  int seed2=1;
+  ArrayList<int> fibbing=new ArrayList<>(1);
+  fibbing.clear();
+
+  if (fibbing.size != 2) {
+    fibbing.add (seed1, 0);
+    fibbing.add (seed2, 1);
+  } else {
+    fibbing.subList(0, fibbing.size-2);
+    int added = (fibbing.get(0)+fibbing.get(1));
+    fibbing.add(added);
+  }
+
+    if (fibbing.size < n) {
+      return fibonacci;
+      } else {
+         fibbing.subList(0, n-1).clear(); //this will remove everything but the last integer in the list, the last integer is our fibonacci number
+         System.out.println(fibbing);
+       }  
+ }
+
+  /* PROMBLEM 7
+   * A palindrome is where a word or sentence is spelled the same
+   * forward as it is backward. For example, "pop" is a palindrome where "cat" is not. The sentence
+   * "Was it a car or a cat I saw" is a palindrome when the spaces are extracted and it is converted
+   * to all lowercase letters. 
+   *
+   *Fun Fact: The longest known single word palindrome " saippuakivikauppias", the finnish word for a type of lye.
+   *
+   * This is a method named "isPalindrome" that takes a single String parameter.
+   * Note: This method will only run correctly on lowercase strings.
+   * It should return the boolean value of true if the string is a palindrome or false if it is not.
+   * 
+   */
+
+public void isPalindrome(String thing) {
+  List<char> list1=new ArrayList<>('a');
+  List<char> list2=new ArrayList<>('a');
+   list1.clear();
+   list2.clear();
+   for(int i=0; thing.length(); i++) { //this part will convert the string into an Array List of characters
+   char letter=thing.charAt(i); 
+   list1.add (letter);
+   }
+
+  for(int i=list1.size - 1; list1.size; i--) { //this put the characters from list1 into list2 in reverse order
+    char backletter=thing.charAt(i); 
+    list2.add (backletter);
+   }
+   
+  if (list1.equals(list2)) {
+    System.out.printline("This is a palindrome");
+  } else {
+     System.out.printline("No fun--This is not a palindrome.");
+ }
+}
