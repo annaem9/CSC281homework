@@ -65,7 +65,6 @@ public class Homework1 {
     
     
     System.out.println("===Problem 7===");
-    // Uncomment to print the results of calling your isPalindrome method with the following input:
     //System.out.println(hw1.isPalindrome("racecar"));
     //System.out.println(hw1.isPalindrome("cat"));
     //System.out.println(hw1.isPalindrome("hannah"));
@@ -190,4 +189,39 @@ public int fibonacci (int n) {
     return fibonacci(n-1) + fibonacci(n-2); }
 }
 
+ /* PROMBLEM 7
+   * NOTE: UNSURE WHY THIS DOES NOT COMPILE. THERE IS AN ISSUE WITH THE CREATION OF THE ARRAYLIST
+   * A palindrome is where a word or sentence is spelled the same
+   * forward as it is backward. For example, "pop" is a palindrome where "cat" is not. The sentence
+   * "Was it a car or a cat I saw" is a palindrome when the spaces are extracted and it is converted
+   * to all lowercase letters. 
+   *
+   *Fun Fact: The longest known single word palindrome " saippuakivikauppias", the finnish word for a type of lye.
+   *
+   * This is a method named "isPalindrome" that takes a single String parameter.
+   * Note: This method will only run correctly on lowercase strings.
+   * It should return the boolean value of true if the string is a palindrome or false if it is not.
+   * 
+   */
+
+ /* public void isPalindrome(String thing) {
+  * List<char> list1=new ArrayList<char>();
+  * List<char> list2=new ArrayList<char>();
+  * for(int i=0; thing.length(); i++) { //this part will convert the string into an Array List of characters
+  * char letter=thing.charAt(i); 
+  * list1.add (letter);
+  * }
+  *
+  * for(int i=list1.size - 1; list1.size; i--) { //this put the characters from list1 into list2 in reverse order
+  * char backletter=thing.charAt(i); 
+  *  list2.add (backletter);
+  * }
+  * 
+  * if (list1.equals(list2)) {
+  * System.out.printline("This is a palindrome");
+  * } else {
+  *  System.out.printline("No fun--This is not a palindrome.");
+  * }
+  * }
+  */
 }
