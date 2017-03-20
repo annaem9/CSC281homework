@@ -1,0 +1,37 @@
+  /*
+   * PROBLEM 6
+   * 
+   * method "fibonacci" takes a single int as its only parameter. 
+   * It should return the fibonacci number at that int
+   * 
+   *
+   * This assumes the seed values of F(0) = 1 and F(1) = 1, and utilizes recursion, 
+   *meaning the method calls itself.
+   */
+
+public void fibonacci (int n) {
+  int seed1 =0;
+  int seed2=1;
+  ArrayList<int> fibbing=new ArrayList<>(1);
+  fibbing.clear();
+
+  if (fibbing.size != 2) {
+    fibbing.add (seed1, 0);
+    fibbing.add (seed2, 1);
+  } else {
+    fibbing.subList(0, fibbing.size-2);
+    int added = (fibbing.get(0)+fibbing.get(1));
+    fibbing.add(added);
+  }
+
+    if (fibbing.size < n) {
+      return fibonacci;
+      } else {
+         fibbing.subList(0, n-1).clear(); //this will remove everything but the last integer in the list, the last integer is our fibonacci number
+         System.out.println(fibbing);
+       }  
+ }
+
+ 
+
+}
