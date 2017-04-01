@@ -1,15 +1,19 @@
 /**
  * Homework 1 for CSC-281.001 Spring 2017
- * 
+ *
+ * Points: 90
+ * topInt should return data of type int.
+ * Partial solution for p7.
+ *
  * Your codename: Chalirena
- * 
+ *
  * This assignment consists of 7 problems. Problem 1 asks you to modify existing
- * code for three subproblems.The remaining six problems each require you to 
+ * code for three subproblems.The remaining six problems each require you to
  * write a method that satisfies the requirements stated in their descriptions.
- * 
+ *
  * You are required to create a javadoc style comment for each method you
- * create. See the sample method named add3 for an example to follow. 
- * 
+ * create. See the sample method named add3 for an example to follow.
+ *
  * Your homework will be graded in the following manner:
  * 70 points for correctness.
  * 		10 points per problem.
@@ -54,7 +58,7 @@ public class Homework1 {
    System.out.println(String.valueOf(hw1.min3(1.0, 2.0, 3.0)));
    System.out.println(String.valueOf(hw1.min3(4.0, 3.0, 2.0)));
    System.out.println(String.valueOf(hw1.min3(0.5, 0.1, 0.5)));
-    
+
     System.out.println("===Problem 6===");
     System.out.println(hw1.fibonacci(0));
     System.out.println(hw1.fibonacci(1));
@@ -62,8 +66,8 @@ public class Homework1 {
     System.out.println(hw1.fibonacci(3));
     System.out.println(hw1.fibonacci(10));
     System.out.println(hw1.fibonacci(25));
-    
-    
+
+
     System.out.println("===Problem 7===");
     //System.out.println(hw1.isPalindrome("racecar"));
     //System.out.println(hw1.isPalindrome("cat"));
@@ -74,7 +78,7 @@ public class Homework1 {
  // PROBLEM 1
 
 public void problem1() {
- double result1 = (5.0 /4.0); 
+ double result1 = (5.0 /4.0);
   if (1.25 == result1) {
       System.out.println("Problem 1a: successfully completed!");
     } else {
@@ -102,8 +106,8 @@ public void problem1() {
    *
    * In Java, when a double or float is cast into an integer via (int), the fractional part of the number
    * after that decimal place is thrown away (e.g. 3.3 becomes 3). An example: int x = (int)3.3;
-   * 
-   * @param tenths, a double which is intended to be rounded 
+   *
+   * @param tenths, a double which is intended to be rounded
    * this method returns the double rounded up instead of being rounded down.
    */
 
@@ -115,9 +119,9 @@ public double topInt(double tenths) {
 
   /*
    * PROBLEM 3
-   * 
-   * This will be a method named "draw4x4" that prints a 4 by 4 box of a character. 
-   * @param design, the character to draw the box with. 
+   *
+   * This will be a method named "draw4x4" that prints a 4 by 4 box of a character.
+   * @param design, the character to draw the box with.
     */
 
 public void draw4x4 (char design){
@@ -125,13 +129,13 @@ public void draw4x4 (char design){
   System.out.println(design+"  "+design);
   System.out.println(design+"  "+design);
   System.out.println(""+design+design+design+design);
-} 
+}
 
   /*
    * PROBLEM 4
-   * 
-   * @param firstName, a first name 
-   * @param lastName, a last name. 
+   *
+   * @param firstName, a first name
+   * @param lastName, a last name.
    *
    * It should return a string that contains the last name concatenated with a comma, a
    * space, the first letter of the first name, and a period.
@@ -142,15 +146,15 @@ public void draw4x4 (char design){
 
 public String citationName(String firstName, String lastName) {
  return (lastName + ", " + firstName.charAt(0)+"."); //this will just take use the first character of the string, ie, giving us the A in Apple
-}  
+}
 
   /*
    * PROBLEM 5
-   * 
+   *
    * @param num1--the first double
    * @param num2--the second double
    * @param num3--the third double
-   * 
+   *
    * this method returns the lowest value of the three
    */
 
@@ -172,16 +176,16 @@ if (num3>getComparing) {
 
  /*
    * PROBLEM 6
-   * 
-   * @param n--n is the number of iterations
-   * 
    *
-   * This method assumes the seed values of F(0) = 1 and F(1) = 1, and utilizes recursion, 
+   * @param n--n is the number of iterations
+   *
+   *
+   * This method assumes the seed values of F(0) = 1 and F(1) = 1, and utilizes recursion,
    *meaning the method calls itself.
    */
- 
+
 public int fibonacci (int n) {
-  if (n==0) 
+  if (n==0)
    {return 0;
 } else if (n==1) {
     return 1;
@@ -194,29 +198,29 @@ public int fibonacci (int n) {
    * A palindrome is where a word or sentence is spelled the same
    * forward as it is backward. For example, "pop" is a palindrome where "cat" is not. The sentence
    * "Was it a car or a cat I saw" is a palindrome when the spaces are extracted and it is converted
-   * to all lowercase letters. 
+   * to all lowercase letters.
    *
    *Fun Fact: The longest known single word palindrome " saippuakivikauppias", the finnish word for a type of lye.
    *
    * This is a method named "isPalindrome" that takes a single String parameter.
    * Note: This method will only run correctly on lowercase strings.
    * It should return the boolean value of true if the string is a palindrome or false if it is not.
-   * 
+   *
    */
 
  /* public void isPalindrome(String thing) {
   * List<char> list1=new ArrayList<char>();
   * List<char> list2=new ArrayList<char>();
   * for(int i=0; thing.length(); i++) { //this part will convert the string into an Array List of characters
-  * char letter=thing.charAt(i); 
+  * char letter=thing.charAt(i);
   * list1.add (letter);
   * }
   *
   * for(int i=list1.size - 1; list1.size; i--) { //this put the characters from list1 into list2 in reverse order
-  * char backletter=thing.charAt(i); 
+  * char backletter=thing.charAt(i);
   *  list2.add (backletter);
   * }
-  * 
+  *
   * if (list1.equals(list2)) {
   * System.out.printline("This is a palindrome");
   * } else {
