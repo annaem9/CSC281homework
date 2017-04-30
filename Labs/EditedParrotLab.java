@@ -1,10 +1,9 @@
-/* Maps and file input lab. Use the io-examples and the Pokedex 
- * code in the course-material folder as samples for completing
- * this lab. More information about maps can be found here:
+/* Maps and file input lab. 
  * https://docs.oracle.com/javase/tutorial/collections/interfaces/map.html
  * 
  * Complete all of the sections marked as TODO.
  */
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -23,12 +22,13 @@ public class CyberParrot {
    * @param args The path to a text.
    */
   public static void main(String[] args) {
-    //Open a file containing the text 
-    //Create a new instance of CyberParrot
+    //Open a file containing the text (**look here later: https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html)
+  //
     CyberParrot pierre = new CyberParrot();
     
     File inputFile = null;
 
+//this will just let us know what book we looking at, or tell us that we need to give it an argument!
     if(args.length >= 1) {
       inputFile = new File(args[0]);
       System.out.println("On the menu: " + args[0]);
@@ -44,10 +44,11 @@ public class CyberParrot {
 
       while(fileScanner.hasNextLine()) {
         String line = fileScanner.nextLine();
-        
-        //TODO: break the line up into words for pierre to eat
+     
+// for (string word; splitByWhitespace(string line)) {    **This thing needs to get defined here!
         pierre.feedWord(word);
-      }
+  }    
+  }
       fileScanner.close();
     } catch(FileNotFoundException e) {
       System.out.println(e);
@@ -74,10 +75,14 @@ public class CyberParrot {
    * @param word A word to feed the CyberParrot.
    */
   public void feedWord(String word) {
-    //TODO
+   
+ if containsValue (wordFrequencies, word)  {
+//   just increment the value} else {
+   //  add the word and make its value 1}
+this.wordCount = wordCount + 1
   }
   
-  
+
   
   /**
    * The CyberParrot should speak a word based on the word frequencies.
