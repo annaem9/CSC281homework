@@ -1,6 +1,6 @@
 /*
  * 
- * Name: 
+ * Name: Chalirina
  * 
  * Grading: 70 points for correct completion of all tasks and 30 points for style, creativity, and
  * following instructions. Up to 10 points can be recovered if you successfully complete the bonus.
@@ -43,7 +43,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import javax.swing.JFrame; //this is the content windo
+import javax.swing.JFrame; //this is the content window
 import javax.swing.JPanel; //this is a lightweight component container, in this case, a drawing panel.
 
 import shapes.*;
@@ -54,41 +54,39 @@ import shapes.*;
  * .
  */
 public class PolyWhirl extends JFrame {
+	public static final int WINDOW_WIDTH = 720; //size of window
+	 public static final int WINDOW_HEIGHT = 640;
 
-  public static final int WINDOW_WIDTH = 720;
-  public static final int WINDOW_HEIGHT = 640;
+	private Surface surface;
 
-  private Surface surface;
-
-  public PolyWhirl() {
-    initUI();
-  }
+ 	public PolyWhirl() {
+   		 initUI();
+		}
 
   /**
    * Initializes the graphics window (a JFrame) and adds the drawing surface (a JPanel).
    */
+	private void initUI() {
+		this.surface = new Surface();
+		setTitle("PolyWhirl");
+		setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // set the resolution of the window to be glorious 720p, as indicated above
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  		add(this.surface);
+		}
 
-  private void initUI() {
-    this.surface = new Surface();
-    setTitle("PolyWhirl");
-    setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // set the resolution of the window to be glorious 720p, as indicated above
-    setLocationRelativeTo(null);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    add(this.surface);
-  }
+	public static void main(String[] args) {
 
-  public static void main(String[] args) {
-
-    EventQueue.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        PolyWhirl polyWhirl = new PolyWhirl();
-        // polyWhirl.drawShapes();
-        polyWhirl.surface.readAndGenerateShapes();
-        polyWhirl.setVisible(true);
-      }
-    });
-  }
+		EventQueue.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+        				PolyWhirl polyWhirl = new PolyWhirl(); //creates a new window, called polywhirl
+        				// polyWhirl.drawShapes();
+       				polyWhirl.surface.readAndGenerateShapes();
+        				polyWhirl.setVisible(true);
+      				}
+   			 });
+ 		 }
 
 
  /*
@@ -96,82 +94,88 @@ public class PolyWhirl extends JFrame {
    * The Surface class inherits JPanel and acts as a drawing surface. It is the core of this program
    * and does the following:
    * 
-   * -Reads input, creates appropriate instances of shapes, and adds them to the correct list via
-   * the readAndGenerateShapes method.
+   * -Reads input through the scanner, creates instances of the shapes designated by that input, and adds them to the list of shapes to be drawn.
+   * this occurs via the readAndGenerateShapes method, which is recursive, meaning it calls itself. It's recursive because we want to be able to add
+   * more than one shape to our list of shapes to draw!
    * 
-   * -Manages the lists of shapes and is responsible for rendering them via the drawShapes method.
+   * -Then Manages the lists of shapes and is responsible for rendering them via the drawShapes method.
    * 
-   * You are responsible for editing and adding capabilities to this class for the assignment.
    */
 
-  class Surface extends JPanel {
+	class Surface extends JPanel {
 
- ArrayList<BasicShape> crystals=new ArrayList<BasicShape>();
+ 		ArrayList<BasicShape> crystals=new ArrayList<BasicShape>();
 
-@Override
-    public void paintComponent(Graphics g) {
-      super.paintComponent(g);
-      this.drawShapes(g);
-      // this.readAndGenerateShapes();
-    }
-  
+		@Override
+    		public void paintComponent(Graphics g) {
+      			super.paintComponent(g);
+      			this.drawShapes(g);
+      			// this.readAndGenerateShapes();
+    			}
  
-public void readAndGenerateShapes() {
+	Scanner katz= new Scanner(System.in);
+ 
+	public void readAndGenerateShapes() {
 
- Scanner katz= new Scanner(System.in);
+		if (katz.hasNextInt()==false) {  
+ 			System.out.println("you're out of pretty shapes--don't forget to close the window before trying again"); //exit the loop
+    			} else{ 
+ 
+			int numSides=katz.nextInt();
+			int x=0;
+			int y=0;
 
+				if (numSides==3) { //if it should have three sides
+ 				x=katz.nextInt();
+  				y=katz.nextInt();
 
-int numSides=katz.nextInt();
-int x=0;
-int y=0;
+  				Tri wetri=new Tri(x, y); //a triangle is added to our list of shapes to draw
+  				crystals.add(wetri);
+				} 
 
-if (numSides==3) {
-  x=katz.nextInt();
-  y=katz.nextInt();
+				else if (numSides==4) {    
+  				x=katz.nextInt();
+   				y=katz.nextInt();
 
-  Tri wetri=new Tri(x, y);
-  crystals.add(wetri);
+ 				Quad wequad=new Quad(x, y);
+				crystals.add(wequad);
+  				} 
 
-  } else if (numSides==4) {    
-   x=katz.nextInt();
-   y=katz.nextInt();
+				else if (numSides==5) {
+ 				x=katz.nextInt();
+  				y=katz.nextInt();
 
-  Quad wequad=new Quad(x, y);
-crystals.add(wequad);
-  } else if (numSides==5) {
-  
-  x=katz.nextInt();
-  y=katz.nextInt();
+ 				Pent wepent=new Pent(x, y);
+ 				crystals.add(wepent);
+				} 
 
-  Pent wepent=new Pent(x, y);
-  crystals.add(wepent);
+				else if (numSides==6){
+   				x=katz.nextInt();
+   				y=katz.nextInt();
 
-  } else if (numSides==6){
-   x=katz.nextInt();
-   y=katz.nextInt();
+				Hex wehex=new Hex(x, y);
+				crystals.add(wehex);
+				}
 
-  Hex wehex=new Hex(x, y);
-crystals.add(wehex);
-}
+				readAndGenerateShapes(); //after adding the shape to the list, start back up at the top. (recursion)
+			}
 
-if (katz.hasNextLine()==true) { ///Is this where the problem is? Does hasNextLine ever end up false?
-readAndGenerateShapes();
-    }
-}
-public void drawShapes(Graphics g) {      
-      ((Graphics2D) g).setColor(java.awt.Color.WHITE); // this draws a white background
-      ((Graphics2D) g).fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);  // this fills that background with a certain gradient
+		}
+	public void drawShapes(Graphics g) {      
+      		((Graphics2D) g).setColor(java.awt.Color.WHITE); // this sets the color for the background
+      		((Graphics2D) g).fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);  // this creates that background
 
-      for (BasicShape c : this.crystals) {
-        c.draw(g);
-      }
-//I think below does what the for loop above does right?
-   //int drawCounter=0;
-   //if (drawCounter<crystals.size()) {
-   //  drawShapes();
-  //   drawCounter=drawCounter++;
-  //  }
-  }
-
-}
+      		for (BasicShape c : this.crystals) {
+      			 c.draw(g);
+      			}
+/*
+*I think below does what the for loop above does right?
+*int drawCounter=0;
+*if (drawCounter<crystals.size()) {
+*drawShapes();
+*drawCounter=drawCounter++;
+*}
+*/
+  		}
+	}
 }

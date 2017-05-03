@@ -53,7 +53,7 @@ public class Quad extends BasicShape {
      */
 
     // specify the color
-    Color strokeColor = new Color(50, 50, 255, 255);
+    Color strokeColor = new Color(100, 0, 250, 255);
     // make the color the active one
     g2d.setColor(strokeColor);
     // set the stroke to have a width of 6.0f
@@ -66,7 +66,7 @@ public class Quad extends BasicShape {
      */
 
     // create instance for for the fill color.
-    Color fillColor = new Color(200, 200, 255, 150);
+    Color fillColor = new Color(100, 0, 250, 150);
     // set the fill color to be the active color
     g2d.setColor(fillColor);
     // fill Polygon p with fillColor

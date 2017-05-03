@@ -35,10 +35,11 @@ public class Hex extends BasicShape {
     // Create the y coordinates of vertices of the Polygon
     yPoints.add(this.y + 10);
     yPoints.add(this.y + 10);
-    yPoints.add(this.y - 10);
+    yPoints.add(this.y - 10); //yep, this will create a tie-fighter shape, but it's still six sided.
     yPoints.add(this.y - 10);
     yPoints.add(this.y + 15);
     yPoints.add(this.y - 15);
+   
     /*
      * Add each point to the Polygon p. Each x and y value in the lists index correspondent. This
      * means that the ith point is made of up the ith index of xPoints and the ith index of yPoints.
@@ -56,7 +57,7 @@ public class Hex extends BasicShape {
      */
 
     // specify the color
-    Color strokeColor = new Color(50, 50, 255, 255);
+    Color strokeColor = new Color(255, 255, 50, 50);
     // make the color the active one
     g2d.setColor(strokeColor);
     // set the stroke to have a width of 6.0f
@@ -69,7 +70,7 @@ public class Hex extends BasicShape {
      */
 
     // create instance for for the fill color.
-    Color fillColor = new Color(200, 200, 255, 150);
+    Color fillColor = new Color(190, 190, 190, 190);
     // set the fill color to be the active color
     g2d.setColor(fillColor);
     // fill Polygon p with fillColor

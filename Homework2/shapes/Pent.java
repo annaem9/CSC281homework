@@ -31,12 +31,13 @@ public class Pent extends BasicShape {
     xPoints.add(this.x + 10);
     xPoints.add(this.x);
 
-    // Create the y coordinates of vertices of the Polygon
+    // Create the y coordinates of vertices of the Polygon--this still creates a smushed bird shape so far...
     yPoints.add(this.y + 10);
     yPoints.add(this.y + 10);
     yPoints.add(this.y + 20);
     yPoints.add(this.y + 20);
     yPoints.add(this.y + 25);
+    
     /*
      * Add each point to the Polygon p. Each x and y value in the lists index correspondent. This
      * means that the ith point is made of up the ith index of xPoints and the ith index of yPoints.
@@ -54,7 +55,7 @@ public class Pent extends BasicShape {
      */
 
     // specify the color
-    Color strokeColor = new Color(50, 50, 255, 255);
+    Color strokeColor = new Color(0, 200, 0, 255);
     // make the color the active one
     g2d.setColor(strokeColor);
     // set the stroke to have a width of 6.0f
