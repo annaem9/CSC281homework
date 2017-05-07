@@ -1,3 +1,7 @@
+//Score: 95
+//Good work!
+//-5 for incorrect output on bubble descending
+
 import SortingAlgorithms.*;
 import HelperClasses.*;
 
@@ -7,7 +11,7 @@ public class SortingTest {
     ASCENDING,
     DESCENDING
   }
-  
+
   public static void main(String[] args) {
 
   	ArrayGeneration generator = new ArrayGeneration();
@@ -200,7 +204,7 @@ public class SortingTest {
   	System.out.println("SelDesc: "+ averageCounts(countValues10SD));
   	System.out.println("SelDesc: "+ averageCounts(countValues100SD));
   	System.out.println("SelDesc: "+ averageCounts(countValues1000SD));
-  
+
 
 //now onto the insertion algorith
 	int[] countValues10IA= new int[10];
@@ -316,5 +320,5 @@ public class SortingTest {
 		}
 		return true;
 
-	} 
+	}
  }
